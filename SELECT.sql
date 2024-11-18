@@ -12,7 +12,8 @@ SELECT name from singer
 where name not like '% %';
 
 SELECT title_of_song from song
-where title_of_song like 'Мой%' or title_of_song like '%мой%'or title_of_song like '%my%' or title_of_song like 'My%';
+where title_of_song ilike 'мой ' or title_of_song ilike ' мой' or title_of_song ilike ' мой ' or title_of_song ilike 'мой' 
+or title_of_song ilike 'my ' or title_of_song ilike ' my' or title_of_song ilike ' my ' or title_of_song ilike 'my';
  
 Задание 3
 
@@ -22,23 +23,26 @@ JOIN genre ON Singer_Genre.genre_id=Genre.genre_id
 GROUP BY genre.title_of_genre 
 ORDER BY COUNT(singer_id);
 
-SELECT year, COUNT(song_id)
+SELECT COUNT(song_id)
 from song
 join album on album.album_id=song.album_id
-group by album.year
-having year between 2019 and 2020;
+where year between 2019 and 2020;
 
 select title_of_album, avg(time)
 from album
 join song on album.album_id=song.album_id
-group by title_of_album
+group by title_of_album;
 
 
-select name, title_of_album, year
-from singer_album
-join singer on singer.singer_id=singer_album.singer_id
-join album on album.album_id=singer_album.album_id
-where year != 2020;
+SELECT name
+FROM singer
+WHERE name not in 
+(SELECT name 
+FROM singer 
+JOIN singer_album on singer.singer_id=singer_album.singer_id 
+JOIN album on album.album_id=singer_album.album_id 
+WHERE year = 2020);
+
 
 select distinct title_of_collection, name
 from song_collection

@@ -68,7 +68,7 @@ INSERT INTO song
 VALUES(6, 'Пополам', 200, 3);
 
 INSERT INTO song
-VALUES(7, 'Привет', 500, 4)
+VALUES(7, 'Привет', 500, 4);
 
 
 
@@ -86,7 +86,7 @@ INSERT INTO singer_album
 VALUES(4, 3, 4);
 
 INSERT INTO singer_album
-VALUES(5, 4, 4)
+VALUES(5, 4, 4);
 
 
 
