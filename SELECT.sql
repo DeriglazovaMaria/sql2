@@ -12,8 +12,8 @@ SELECT name from singer
 where name not like '% %';
 
 SELECT title_of_song from song
-where title_of_song ilike 'мой ' or title_of_song ilike ' мой' or title_of_song ilike ' мой ' or title_of_song ilike 'мой' 
-or title_of_song ilike 'my ' or title_of_song ilike ' my' or title_of_song ilike ' my ' or title_of_song ilike 'my';
+where title_of_song ilike 'мой %' or title_of_song ilike '% мой' or title_of_song ilike '% мой %' or title_of_song ilike 'мой' 
+or title_of_song ilike 'my %' or title_of_song ilike '% my' or title_of_song ilike '% my %' or title_of_song ilike 'my';
  
 Задание 3
 
